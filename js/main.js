@@ -160,7 +160,13 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  const imgUrl = DBHelper.imageUrlForRestaurant(restaurant, 'thumb');
+  const imgArray = imgUrl.split('.');
+  const imgUrl1x = imgArray[0] + '_1x.' + imgArray[1]; //insert '_1x' on image name
+  const imgUrl2x = imgArray[0] + '_2x.' + imgArray[1]; //insert '_2x' on image name
+  image.src = imgUrl1x; //default to smaller image
+  image.srcset = imgUrl1x + ' 300w, ' + imgUrl2x + ' 600w';
+  image.alt = restaurant.name + ' image';
   li.append(image);
 
   const name = document.createElement('h1');
@@ -178,9 +184,9 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
 
-  return li
+  return li;
 }
 
 /**
