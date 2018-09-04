@@ -73,6 +73,9 @@ section {
 	text-transform: uppercase;
 	width: 100%;
 }
+:focus {
+	outline: 2px solid #FF0;
+}
 /* ====================== Navigation ====================== */
 nav {
 	width: 100%;
@@ -134,7 +137,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
 	width: 100%;
-	background-color: #3397DB;
+	background-color: #0b62a7;
 	align-items: center;
 	padding: 10px 0;
 }
@@ -158,9 +161,6 @@ nav h1 a {
 .filter-selects {
 	display: flex;
 	flex-wrap: wrap;
-}
-.filter-label {
-	display: none;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -201,18 +201,16 @@ nav h1 a {
 	margin: 0;
 	width: 100%;
 }
-/* from webinar with Doug Brown
 #restaurants-list .restaurants-text-area {
-	padding: 0 25px;
+	padding: 0 15px;
 	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: 170px;
-	max-height: 170px;
-}*/
-#restaurants-list li h1 {
-	color: #f18200;
+	height: 170px;
+}
+#restaurants-list li h2 {
+	color: #ca3000;
 	font-family: Arial,sans-serif;
 	font-size: 14pt;
 	font-weight: 200;
@@ -225,17 +223,17 @@ nav h1 a {
 	margin: 0;
 	font-size: .8em;
 }
-#restaurants-list li a {
-	background-color: orange;
+#restaurants-list li button {
+	background-color: #ca3000;
 	border-bottom: 3px solid #eee;
 	color: #fff;
 	display: inline-block;
 	font-size: 1em;
-	margin: 15px 0 0;
 	padding: 8px 30px 10px;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -296,7 +294,7 @@ nav h1 a {
 #reviews-container {
 	padding: 30px 40px 30px;
 }
-#reviews-container h2 {
+#reviews-container h3 {
 	color: #f58500;
 	font-size: 24pt;
 	font-weight: 300;
@@ -335,4 +333,8 @@ nav h1 a {
 #restaurant-hours td {
 	color: #666;
 	font-size: .8em;
+}
+
+.aria-label {
+	display: none;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,18 +20,21 @@
 
 	<main id="maincontent">
 		<section id="map-container">
-			<div id="map"></div>
+			<div id="map" aria-labelledby="map-aria-description" role="application"></div>
 		</section>
+		<label id="map-aria-description" class="aria-label">Map</label>
 		<section>
 			<div class="filter-options">
 				<h2>Filter Results</h2>
 				<div class="filter-selects">
-					<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+					<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-labelledby="neighborhoods-label">>
 						<option value="all">All Neighborhoods</option>
 					</select>
-					<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+					<label id="neighborhoods-label" class="aria-label">filter by neighborhoods</label>
+					<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-labelledby="cuisines-label">
 						<option value="all">All Cuisines</option>
 					</select>
+					<label id="cuisines-label" class="aria-label">filter by cuisines</label>
 				</div>
 			</div>
 			<ul id="restaurants-list"></ul>
